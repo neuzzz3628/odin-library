@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="javascript.js" referrerpolicy="no-referrer" defer></script>
+    <title>Odin Library</title>
+  </head>
+  <body>
+    <h2 class="header">YOUR BOOKS</h2>
+    <dialog id="new-book">
+      <form method="dialog">
+        <h3>New book</h3>
+        <button value="cancel" formmethod="dialog" formnovalidate>
+          <img src="assets/icons8-cancel-24.png" alt="cancel icon">
+        </button>
+        <label for="title">Title:</label>
+        <input id="title" name="title" type="text" required />
+        
+        <label for="author">Author: </label>
+        <input id="author" name="author" type="text" required />
+        
+        <label for="pages">Pages: </label>
+        <input id="pages" name="pages" type="number" min="0" required/>
+        
+        <label for="read">Read? </label>
+        <input id="read" name="read" type="checkbox"/>
+        
+        <button value="default" id="confirmBtn" type="submit">Confirm</button>
+      </form>
+    </dialog>
+    <button class="button">Add book</button>
+    <div class="container"></div>
+  </body>
+</html>
