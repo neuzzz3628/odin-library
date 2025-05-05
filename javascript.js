@@ -1,23 +1,39 @@
-function Book(title, author, pages, read){
-    if(!new.target){
-        throw Error("must use 'new'");
+// function Book(title, author, pages, read){
+//     if(!new.target){
+//         throw Error("must use 'new'");
+//     }
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+//     this.bookID = crypto.randomUUID();
+// }
+
+// Book.prototype.info = function() {
+//     const readStatus = this.read ? "Read" : "Not Read Yet";
+//     return(`${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}`)
+// }
+
+// Book.prototype.toggleRead = function() {
+//     this.read = !this.read;
+// }
+
+class Book{
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.bookID = crypto.randomUUID();
     }
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.bookID = crypto.randomUUID();
+    info() {
+        const readStatus = this.read ? "Read" : "Not Read Yet";
+        return(`${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}`)
+    }
+    toggleRead() {
+        this.read = !this.read;
+    }
 }
-
-Book.prototype.info = function() {
-    const readStatus = this.read ? "Read" : "Not Read Yet";
-    return(`${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}`)
-}
-
-Book.prototype.toggleRead = function() {
-    this.read = !this.read;
-}
-
 
 const myLibrary = [];
 
